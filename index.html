@@ -185,8 +185,8 @@
 </head>
 
 <body ng-class="{'rtl':$root.currentLanguage == 'ar'}" device-detector ng-cloak>  
-  
-  <div class="loader-container" style="display:block;"><div class="abs_center"><h1 class="text-uppercase">Khalifa Fund</h1><div class="loading"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div > </div> </div>
+   
+    <div class="loader-container" ng-if="$root.showSpinner" style="display:block;"><div class="abs_center"><h1 class="text-uppercase">Test</h1><div class="loading"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div> </div> </div>
 
   <div class="offline-ui" ng-class="{'offline-ui-up offline-ui-up-5s':$root.isOnline,'offline-ui-down':!$root.isOnline,'offline-ui-connecting offline-ui-waiting':$root.isRetry}"
     ng-if="$root.connectionStatus !== '' ">
@@ -258,7 +258,7 @@
   </div>
   <item-nav-bar ng-show="$root.showNavBar"></item-nav-bar>
   <share-nav-bar ng-show="$root.showShareBar"></share-nav-bar>
-   <script src="assets/js/lib.js"></script>
+   <script src="assets/js/libs.js"></script>
   <script src="assets/js/app.js"></script>
    <!-- <script src="bower_components/enjoyhint/enjoyhint.min.js"></script>   -->
   <script src="bower_components/ngProgress/ngProgress.min.js"></script>

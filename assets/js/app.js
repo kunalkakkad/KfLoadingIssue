@@ -1372,9 +1372,8 @@ angular
                     $rootScope.progressbar.setColor('#6dbe48');
                     $rootScope.progressbar.setHeight('5px');
                     $rootScope.progressbar.start();
-                    //$rootScope.showSpinner = true;
-                    //showLoader();
-                    $('.loader-container').css('display','block');
+                    $rootScope.showSpinner = true;
+                    //$('body').append('<div class="loader-container" style="display:block;"><div class="abs_center"><h1 class="text-uppercase">Test</h1><div class="loading"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div > </div> </div>');
                     //  $rootScope.progressbar.reset();
                     var url = $state.href('index', { lang: selectedLanguage, '#': 'home' });
                     if (selectedLanguage == 'en') {
@@ -2112,9 +2111,9 @@ angular
                 return vm.swiper.imagesLoaded;
             }, function (newvalue, oldvalue) {
 
-            	var timeoutval = 800;
+            	var timeoutval = 200;
             	if(vm.isMobile) {
-            		timeoutval = 4000;
+            		timeoutval = 200;
             	}
 
             	if (newvalue >= vm.swiper.imagesToLoad.length - 2) {
@@ -2229,9 +2228,9 @@ angular
         ngMeta.init();
         $rootScope.appConfig = appConfig;
         $rootScope.lang = 'en';
-        // $rootScope.showSpinner = true;
-        //$('body').append('<div class="loader-container" style="display:block;"><div class="abs_center"><h1 class="text-uppercase">khalifa fund</h1><div class="loading"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div > </div> </div>');
-    //    debugger;
+         $rootScope.showSpinner = true;
+       // $('body').append('<div class="loader-container" style="display:block;"><div class="abs_center"><h1 class="text-uppercase">Test</h1><div class="loading"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div > </div> </div>');
+
         $rootScope.device = deviceDetector.device;
         $rootScope.isMobile = deviceDetector.isMobile() && !deviceDetector.isTablet();
         $rootScope.removeReverse = function () {

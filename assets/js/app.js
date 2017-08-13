@@ -2107,43 +2107,43 @@ angular
             });
 
             var images = vm.swiper.imagesToLoad.length;
-            //$scope.$watch(function () {
-            //    return vm.swiper.imagesLoaded;
-            //}, function (newvalue, oldvalue) {
+            $scope.$watch(function () {
+                return vm.swiper.imagesLoaded;
+            }, function (newvalue, oldvalue) {
 
-            //	var timeoutval = 200;
-            //	if(vm.isMobile) {
-            //		timeoutval = 200;
-            //	}
+            	var timeoutval = 200;
+            	if(vm.isMobile) {
+            		timeoutval = 200;
+            	}
 
-            //	if (newvalue >= vm.swiper.imagesToLoad.length - 2) {
+            	if (newvalue >= vm.swiper.imagesToLoad.length - 2) {
 
-            //    	$timeout(function () {
-            //            if (vm.swiper) {
-            //                getSwiperData(vm.swiper.activeIndex);
-            //            }
-            //        },200);
+                	$timeout(function () {
+                        if (vm.swiper) {
+                            getSwiperData(vm.swiper.activeIndex);
+                        }
+                    },200);
 
-            //	}
+            	}
 
-            //    if (newvalue >= vm.swiper.imagesToLoad.length) {
+                if (newvalue >= vm.swiper.imagesToLoad.length) {
 
-	           //     $timeout(function () {
-	           //             // $rootScope.showSpinner = false;
-	           //             $('.loader-container').fadeOut();
-	           //             //  $rootScope.progressbar = ngProgressFactory.createInstance();
-	           //             $rootScope.progressbar.complete();
-	           //         },timeoutval);
-            //	}
-            //    }) 
-            var newVal = vm.swiper.imagesLoaded;
-            while (newVal < vm.swiper.imagesToLoad.length) {
-                newVal = vm.swiper.imagesLoaded; 
-                if (newVal >= vm.swiper.imagesToLoad.length) {
-                    $rootScope.showSpinner = false;
-                    $rootScope.progressbar.complete();
-                }
-            }
+	                $timeout(function () {
+	                        // $rootScope.showSpinner = false;
+	                        $('.loader-container').fadeOut();
+	                        //  $rootScope.progressbar = ngProgressFactory.createInstance();
+	                        $rootScope.progressbar.complete();
+	                    },timeoutval);
+            	}
+                }) 
+            //var newVal = vm.swiper.imagesLoaded;
+            //while (newVal < vm.swiper.imagesToLoad.length) {
+            //    newVal = vm.swiper.imagesLoaded; 
+            //    if (newVal >= vm.swiper.imagesToLoad.length) {
+            //        $rootScope.showSpinner = false;
+            //        $rootScope.progressbar.complete();
+            //    }
+            //}
             
         }
 

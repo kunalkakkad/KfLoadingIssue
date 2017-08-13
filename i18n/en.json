@@ -1,0 +1,79 @@
+{
+	"Common" :{
+		"English":"English",
+		"Arabic":"Arabic",
+		"Home" : "Home",
+		"Khalifa_Fund":"Khalifa Fund",
+		"Successful_Stories":"Successful stories",
+		"Success_Stories":"Success Stories",		
+		"All": "All",
+		"No_Record" : "No Records Found...",
+		"Stories" : "Stories",
+		"Facebook":"Facebook",
+		"Twitter":"Twitter",
+		"Linkedin" : "Linkedin",
+		"Email_Us":"Email Us",
+		"Call_Now":"Call Now",
+		"Website":"Website",
+		"Success_Delivering_Title" : "10 YEARS JOURNEY OF DELIVERING SUCCESS",
+		"Success_Delivering_SubTitle":"We are making dreams happen",
+		"Back":"Back",
+		"Next":"Next"
+	},
+	"Index" : {
+		"SelectLanguage" : "Please select the language"		
+	},
+	"Home" : {
+		"Language_Setting":"Language Setting",				
+		"Success_Stories":"Success Stories",
+		"Success_Stories_Desc":"Over the past decade, Khalifa Fund for Enterprise Development has been committed to fostering the SME landscape within the UAE. We work with key stakeholders across the region to support SME businesses at different stages of growth, giving them a platform to flourish in a sustainable manner. Think of us as a launchpad, where SMEs get funding, mentorship and several other facilities as they embark on their challenging entrepreneurship journey. Today, we are celebrating 10 years of catalysing the growth of high potential SMEs - and we want to share their beautiful stories with you. We hope you enjoy reading these 60 profiles of innovation as much as we enjoyed putting them together for you!",
+		"Read_The_Stories":"Read the stories",
+		"Board_Members":"Partners In Growth",
+		"Board_Members_Desc" :"Khalifa Fund for Enterprise Development has forged close partnerships with key stakeholders within the SME ecosystem since its very inception. We recognise that such associations strengthen our support infrastructure and foster cross-industry collaboration. Moreover, these partners have played a pivotal role in enhancing the competitiveness of our member businesses through their ongoing support. We are extremely grateful to these entities and would like to showcase some of their fantastic insights on this platform.",
+		"See_Interviews":"See interviews",
+		"Select_section":"Please select the section you want to view"
+	},
+	"Stories" :{
+		"Search" : "Search for Story",
+		"Search_Placeholder" : "search fo company name, founder name, business category or location",
+		"Sort_by" : "Sort by",
+		"Founder_Name" : "Founder Name",
+		"Founder":"Founder",
+		"Company_Name" : "Company Name",
+		"Company":"Company",
+		"A_Z":"A to Z",
+		"Emirate":"Emirate",
+		"Company_Activity":"Company Activity",
+		"Activity":"Activity",
+		"Click_here_to_show_all_stories":"Click here to show all Stories",
+		"Show_All_Stories":"Show all stories",
+		"Story_count" : "{{value}} Story Found"		
+	},
+	"Story":{
+		"SuccessFullStories": "Successfull Stories",
+		"DiscoverStories": "Discover the stories",
+		"YearOfEstablishment": "Year of establishment",
+		"Founded" : "Founded",
+		"Staff" :"Staff",
+		"USP" : "USP",
+		"NoOfEmployees": "Number of employees",
+		"Uniquesellingpoint": "Unique selling point",
+		"Readthisstory": "Read this story",
+		"Story":"Story",
+		"StoryCount": "{{No}} of {{TotalStories}}",
+		"SlideLeft": "Slide left for the next story"		
+	},
+	"Members" : {
+		"Board_Members_Interviewes" : "Board Members interviews",
+		"Board_Members_Descriptions" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry›s standard dummy text ever since the 1500s, when an unknown printer took a galley Lorem Ipsum is simply dummy text of the printing and ever since the 1500sey Lorem Ipsum is simply dummy tex"
+	},
+	"Member":{
+		"Interviews" : "Interviews",
+		"Interview" : "Interview",
+		"MemberCount": "{{No}} of {{TotalMembers}}",
+		"Member_Interview" : "Member interview",
+		"ReadThisInterview": "Read this interview",
+		"SlideLeftInterview": "Slide left for the next member interview",
+		"Click_View_Interview_Video":"Click here to play the interview video"
+	}
+}

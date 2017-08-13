@@ -1,0 +1,78 @@
+{
+	"Common" :{
+		"English":"الإنجليزية",
+		"Arabic":"عربى",
+		"Home" : "الصفحة الرئيسية",
+		"Khalifa_Fund":"صندوق خليفة",
+		"Successful_Stories":"قصص ناجحة",
+		"Success_Stories":"قصص النجاح",
+		"All": "الكل",
+		"No_Record" : "لا توجد سجلات...",
+		"Stories" : "قصص",
+		"Facebook":"فيس بوك",
+		"Linkedin" : "تابعني على",
+		"Twitter":"تغريد",
+		"Email_Us":"مراسلتنا عبر البريد الإلكتروني",
+		"Call_Now":"اتصل الان",
+		"Website":"موقع الكتروني",
+		"Success_Delivering_Title" : "10 يارس جورنال أوف ديليفرينغ سوتشيس",
+		"Success_Delivering_SubTitle":"نحن نحقق الأحلام",
+		"Back":"الى الخلف",
+		"Next":"التالى"
+	},
+	"Index" : {		
+		"SelectLanguage" : "يرجى تحديد اللغة"		
+	},
+	"Home" : {
+		"Language_Setting":"إعدادات اللغة",						
+		"Success_Stories":"قصص النجاح",
+		"Success_Stories_Desc":"أبجد هوز هو مجرد دمية النص من صناعة الطباعة والتنضيد. وكان أبجد هوز نص الدمية القياسية في هذه الصناعة من أي وقت مضى منذ 1500s، عندما استغرقت طابعة غير معروفة المطبخ من نوع وسارعت لجعل كتاب عينة نوع. وقد نجا ليس فقط خمسة قرون، ولكن أيضا",
+		"Read_The_Stories":"قراءة القصص",
+		"Board_Members":"أعضاء مجلس اإلدارة",
+		"Board_Members_Desc" :"أبجد هوز هو مجرد دمية النص من صناعة الطباعة والتنضيد. وكان أبجد هوز نص الدمية القياسية في هذه الصناعة من أي وقت مضى منذ 1500s، عندما استغرقت طابعة غير معروفة المطبخ من نوع وسارعت لجعل كتاب عينة نوع. وقد نجا ليس فقط خمسة قرون، ولكن أيضا",
+		"See_Interviews":"انظر المقابلات",
+		"Select_section":"يرجى تحديد القسم الذي تريد عرضه"
+	},
+	"Stories" :{
+		"Search" : "البحث عن قصة",
+		"Search_Placeholder" : "بحث فو اسم الشركة، اسم مؤسس، فئة الأعمال أو الموقع",
+		"Sort_by" : "ترتيب حسب",
+		"Founder_Name" : "اسم المؤسس",
+		"Founder":"مؤسس",
+		"Company_Name" : "اسم الشركة",
+		"Company":"شركة",
+		"A_Z":"A إلى Z",
+		"Emirate":"الإمارة",
+		"Company_Activity":"نشاط الشركه",
+		"Activity":"نشاط",
+		"Click_here_to_show_all_stories":"انقر هنا لعرض كل القصص",
+		"Show_All_Stories":"عرض كل القصص",
+		"Story_count" : "وجدت {{value}} قصة"
+	},
+	"Story":{
+		"SuccessFullStories": "قصص ناجحة",
+		"DiscoverStories": "اكتشاف القصص",
+		"YearOfEstablishment": "سنة التأسيس",
+		"Founded" : "مؤسس",
+		"Staff" :"العاملين",
+		"USP" : "USP",
+		"NoOfEmployees": "عدد الموظفين",
+		"Uniquesellingpoint": "نقطة بيع فريدة من نوعها",
+		"Readthisstory": "اقرأ هذه القصة",
+		"Story":"قصة",
+		"StoryCount": "{{TotalStories}}القصة {{No}}",
+		"SlideLeft": "انتقل الشريحة إلى القصة القادمة"		
+	},
+	"Members" : {
+		"Board_Members_Interviewes" : "مقابلات أعضاء مجلس الإدارة",
+		"Board_Members_Descriptions" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry›s standard dummy text ever since the 1500s, when an unknown printer took a galley Lorem Ipsum is simply dummy text of the printing and ever since the 1500sey Lorem Ipsum is simply dummy tex"
+	},
+	"Member":{
+    "Interviews": "مقابلات",
+    "Interview": "مقابلة",
+    "MemberCount": "من",
+		"Member_Interview" : "مقابلة العضو",
+		"ReadThisInterview": "اقرأ هذه المقابلة",
+		"SlideLeftInterview": "غادر الشريحة لمقابلة العضو التالي"
+	}
+}

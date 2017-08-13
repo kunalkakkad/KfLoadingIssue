@@ -2138,7 +2138,7 @@ angular
             //    }) 
             var newVal = vm.swiper.imagesLoaded;
             while (newVal < vm.swiper.imagesToLoad.length) {
-                newVal = vm.swiper.imagesLoaded;
+                newVal = vm.swiper.imagesLoaded; 
                 if (newVal >= vm.swiper.imagesToLoad.length) {
                     $rootScope.showSpinner = false;
                     $rootScope.progressbar.complete();

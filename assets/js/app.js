@@ -2118,18 +2118,19 @@ angular
 
             	if (newvalue >= vm.swiper.imagesToLoad.length - 2) {
 
-                	$timeout(function () {
+                	//$timeout(function () {
                         if (vm.swiper) {
                             getSwiperData(vm.swiper.activeIndex);
                         }
-                    },200);
+                    //},200);
 
             	}
 
                 if (newvalue >= vm.swiper.imagesToLoad.length) {
 
-	                $timeout(function () {
-	                        // $rootScope.showSpinner = false;
+                    $timeout(function () {
+                        angular.copy(false, $rootScope.showSpinner);
+	                         //$rootScope.showSpinner = false;
 	                        $('.loader-container').fadeOut();
 	                        //  $rootScope.progressbar = ngProgressFactory.createInstance();
 	                        $rootScope.progressbar.complete();
@@ -2149,13 +2150,21 @@ angular
 
         function getSwiperData(index) {
             var currentSlide = dataService.swiperData[index];
-            $scope.currentSlide = currentSlide;
-            $rootScope.isHome = currentSlide.isHome;
-            $rootScope.hasPagination = currentSlide.hasPagination;
-            $rootScope.hasMemberHome = currentSlide.hasMemberHome;
-            $rootScope.nestedSwipe = currentSlide.nestedSwipe;
-            $rootScope.pageIndex.row = currentSlide.index;
-            $rootScope.pageIndex.column = 1;
+            angular.copy(currentSlide, $scope.currentSlide);
+            angular.copy(currentSlide.isHome, $rootScope.isHome);
+            angular.copy(currentSlide.hasPagination, $rootScope.hasPagination);
+            angular.copy(currentSlide.hasMemberHome, $rootScope.hasMemberHome);
+            angular.copy(currentSlide.nestedSwipe, $rootScope.nestedSwipe);
+            angular.copy(currentSlide.index, $rootScope.pageIndex.row);
+            angular.copy(1, $rootScope.pageIndex.column );
+
+            //$scope.currentSlide = currentSlide;
+            //$rootScope.isHome = currentSlide.isHome;
+            //$rootScope.hasPagination = currentSlide.hasPagination;
+            //$rootScope.hasMemberHome = currentSlide.hasMemberHome;
+            //$rootScope.nestedSwipe = currentSlide.nestedSwipe;
+            //$rootScope.pageIndex.row = currentSlide.index;
+            //$rootScope.pageIndex.column = 1;
 
           //  updateMetaModel(currentSlide.meta);
         }

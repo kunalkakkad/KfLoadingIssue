@@ -1,0 +1,21 @@
+<div class="page_background page_background_1" style="background-image: url('assets/img/landing-page-bg.jpg')"></div>
+<div class="layout layout_1 clearFix">
+    <div class="page_content">
+        <header class="page_header">
+            <div class="col-xs-12 logo_block"><a href="#" class="logo"><img src="assets/img/logo.svg" alt="Logo Image"></a></div>
+        </header>
+        <div class="page_center abs_center">
+            <div class="success_stories_count"><span class="story_count">{{ indexCtrl.stories }} </span><span class="succes_story_text arab_text">{{'Common.Successful_Stories' | translate:null:null:'ar'}} </span>
+                <span class="succes_story_text">{{'Common.Successful_Stories' | translate:null:null:'en'}}</span>
+            </div>
+        </div>
+        <footer class="page_footer">
+            <div class="pull-left lang_setting_block">
+                <p class="lang_setting"><i class="icon-language lang_icon"></i> <span class="arab_text">{{'Index.SelectLanguage' | translate:null:null:'ar'}} </span><span>{{ 'Index.SelectLanguage' | translate:null:null:'en' }}</span></p>
+                <div class="btn_group" id="hint1"><a class="btn btn-default white-bordered" ng-click="$root.removeReverse();indexCtrl.changeLanguage('en');">{{'Common.English' | translate:null:null:'en'}} </a>
+                    <a class="btn btn-default white-bordered" ng-click="$root.removeReverse();indexCtrl.changeLanguage('ar');"><span class="arab_text">{{'Common.Arabic' | translate:null:null:'ar'}}</span></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

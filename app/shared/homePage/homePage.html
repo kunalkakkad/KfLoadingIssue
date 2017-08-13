@@ -1,0 +1,29 @@
+<div class="page_background page_background_2" style="background-image: url('assets/img/blue-grad-bg.jpg')"></div>
+<div class="layout layout_2 clearFix">
+    <div class="page_content">
+        <header class="page_header"></header>
+        <section class="page_center page_center_1">
+            <h1 class="page_title"><i class="icon-hill-flag"></i> <strong>{{ 'Common.Success_Delivering_Title' | translate }}</strong> <span>{{ 'Common.Success_Delivering_SubTitle' | translate }}</span></h1>
+            <div
+                class="home_story_list_block">
+                <div>
+                    <article class="home_story_list" ng-click="homeCtrl.slideToStoriesIndex()" style="cursor:pointer">
+                        <figure><img src="assets/img/success-story.jpg" alt="{{'Home.Success_Stories' | translate }}"></figure>
+                        <div
+                            class="home_story_list_desc">
+                            <h2><i class="icon-story"></i> {{'Home.Success_Stories' | translate }}</h2>
+                            <p>{{ 'Home.Success_Stories_Desc' | translate }}</p><a ng-click="$root.removeReverse();" class="btn white-bordered"
+                                id="hint2">{{ 'Home.Read_The_Stories' | translate }}</a></div>
+                </article>
+                <article class="home_story_list board-member-story-link" ng-click="homeCtrl.slideToMembersIndex()" style="cursor:pointer">
+                    <figure><img src="assets/img/board-members.jpg" alt="{{'Home.Board_Members' | translate }}"></figure>
+                    <div class="home_story_list_desc">
+                        <h2><i class="icon-board-member"></i> {{'Home.Board_Members' | translate }}</h2>
+                        <p>{{ 'Home.Board_Members_Desc' | translate }}</p><a ng-click="$root.removeReverse();" class="btn white-bordered">{{ 'Home.See_Interviews' | translate }}</a></div>
+                </article>
+    </div>
+</div>
+</section>
+<footer class="page_footer"></footer>
+</div>
+</div>

@@ -1,0 +1,212 @@
+<div ng-if="storyCtrl.storyDetail" style="height:100% !important">
+    <ks-swiper-container swiper="storyCtrl.swiper" on-ready="storyCtrl.onReadySwiper(swiper)" direction="vertical" pagination-clickable="true"
+        show-nav-buttons="false" space-between="30" slides-per-view="1" override-parameters="{keyboardControl:true,nested:true,mousewheelControl:true,hashnavWatchState:true,speed:1000,shortSwipes:true,longSwipesRatio:0.0}">
+        <ks-swiper-slide class="swiper-slide">
+            <div class="page_background page_background_3" story-background="{{storyCtrl.storyDetail.bgImage}}"></div>
+            <div class="layout layout_1 clearFix">
+                <div class="page_content">
+                    <header class="page_header page_header_2">
+                        <div class="col-xs-12 logo_block" ng-if="!storyCtrl.isMobile">
+                            <a href="#" class="logo" style="margin-left:auto;margin-right:auto;float:none"><img src="assets/img/logo.svg" alt="Logo Image"></a>
+                        </div>
+                        <h3>{{ 'Common.Success_Stories' | translate }}</h3>
+                    </header>
+                    <section class="page_center story_page_center abs_center">
+                        <div class="story_img_desc"><img class="story_member_photo" ng-src="{{storyCtrl.storyDetail.publisher.profilePic}}" alt="member"></div>
+                        <h3><strong>{{storyCtrl.storyDetail.publisher.name}} / </strong>{{storyCtrl.storyDetail.publisher.designation}}</h3>
+                        <h2>{{storyCtrl.storyDetail.publisher.company}}</h2>
+                        <ul class="story_social_links">
+                            <li ng-if="storyCtrl.storyDetail.publisher.facebook_url"><a href="{{storyCtrl.storyDetail.publisher.facebook_url}}" target="_blank"><i class="icon-facebook"></i></a></li>
+                            <li ng-if="storyCtrl.storyDetail.publisher.twitter_url"><a href="{{storyCtrl.storyDetail.publisher.twitter_url}}" target="_blank"><i class="icon-tweeter"></i></a></li>
+                            <li ng-if="storyCtrl.storyDetail.publisher.linkedin_url"><a href="{{storyCtrl.storyDetail.publisher.linkedin_url}}" target="_blank"><i class="icon-linkedin"></i></a></li>
+                            <li ng-if="storyCtrl.storyDetail.publisher.contact_no"><a href="tel:{{storyCtrl.storyDetail.publisher.contact_no}}"><i class="icon-phone"></i></a></li>
+                            <li ng-if="storyCtrl.storyDetail.publisher.email"><a href="mailto:{{storyCtrl.storyDetail.publisher.email}}" target="_blank"><i class="icon-mail"></i></a></li>
+                            <li ng-if="storyCtrl.storyDetail.publisher.website"><a href="{{storyCtrl.storyDetail.publisher.website}}" target="_blank"><i class="icon-web"></i></a></li>
+                        </ul>
+
+                        <div class="highlighted_info" ng-if="storyCtrl.isMobile">
+                            <p>
+                                <strong>{{ 'Story.Founded' | translate }} </strong>{{storyCtrl.storyDetail.publisher.establishedOn}}
+                                /
+                                <strong>{{ 'Story.Staff' | translate }} </strong>{{storyCtrl.storyDetail.publisher.employees}}
+                            </p>
+                            <p>
+                                <strong>{{ 'Story.USP' | translate }} </strong> {{storyCtrl.storyDetail.publisher.uniqueSellingPoint}}
+                            </p>
+                        </div>
+
+                        <div class="highlighted_info" ng-if="!storyCtrl.isMobile" style="margin-bottom: 0px;border-bottom: 0px;">
+                            <p><strong>{{ 'Story.Founded' | translate }} </strong>{{storyCtrl.storyDetail.publisher.establishedOn}}
+                                / <strong>{{ 'Story.Staff' | translate }} </strong>{{storyCtrl.storyDetail.publisher.employees}}</p>
+                        </div>
+
+                        <div class="highlighted_info" ng-if="!storyCtrl.isMobile" style="margin-top:0px">
+                            <p><strong>{{ 'Story.USP' | translate }} </strong></p>
+                            <p>{{storyCtrl.storyDetail.publisher.uniqueSellingPoint}}</p>
+                        </div>
+
+                        <h6 class="current_story"><strong>{{ 'Story.Story' | translate }}</strong> {{storyCtrl.storyDetail.no}} {{ 'Story.StoryCount'
+                            | translate : storyCtrl.storyDetail}} {{storyCtrl.storyDetail.count}}</h6>
+                    </section>
+                </div>
+                <a ng-if="!storyCtrl.isMobile" ng-click="$root.removeReverse(); $root.slideTo(2)" role="button" class="active" aria-pressed="false" href="javascript:void(0);"
+                    style="cursor: pointer;width: 40px;position: absolute;left: 50px;top: 50px;z-index:999999">
+                    <img src="assets/img/home-button.png"  />
+                </a>
+                <a ng-if="$root.hasPagination && $root.nestedSwipe" id="down_{{storyCtrl.storyDetail.no}}" ng-class="{disabled: $root.hideDownArrow}" ng-disabled="$root.hideDownArrow"
+                    ng-click="$root.nextColumn()" role="button"  aria-pressed="false" class="main-arrow down active" href="javascript:void(0);"
+                    style="cursor: pointer;bottom: 20px;height: 40px;left: 50%;margin-left: -20px;position: absolute;width: 40px;z-index:999999">
+                    <img src="assets/img/down-arrow-white.png"  class="down-arrow" />
+                </a>
+                <a ng-if="!storyCtrl.isMobile" ng-class="{'disabled': $root.isLastSlide}" ng-disabled="$root.isLastSlide" class="main-arrow right active"
+                    style="cursor: pointer;height: 40px;margin-top: -20px;position: absolute;right: 20px;top: 50%;width: 40px;z-index:999999"
+                    ng-click="$root.removeReverse(); $root.pageNext();" href="javascript:void(0);">
+                    <img src="assets/img/down-arrow-white.png" style="transform: rotate(270deg);" />
+                </a>
+                <a ng-if="!storyCtrl.isMobile" class="main-arrow left active" style="cursor: pointer;height: 40px;margin-top: -20px;position: absolute;left: 20px;top: 50%;width: 40px;z-index:999999"
+                    ng-click="$root.addReverse(); $root.pagePrev();" href="javascript:void(0);">
+                    <img src="assets/img/down-arrow-white.png" style="transform: rotate(90deg);" />
+                </a>
+
+                <!-- <a  ng-if="$root.hasPagination && $root.nestedSwipe" ng-class="{disabled: $root.hideUpArrow}" ng-disabled="$root.hideUpArrow" ng-click="$root.prevColumn()"  role="button" aria-pressed="false" class="main-arrow up active" href="javascript:void(0);" style="cursor: pointer;height: 80px;margin-left: -40px;position: absolute;top: 10px;width: 80px;left:50%;z-index:999999">
+                <img src="assets/img/down-arrow.png" style="transform: rotate(180deg);" />
+            </a> -->
+            </div>
+        </ks-swiper-slide>
+        <ks-swiper-slide class="swiper-slide" ng-repeat="page in storyCtrl.storyDetail.storypages">
+            <div class="page_background page_background_3 page_background_4"></div>
+            <div class="layout layout_1 clearFix ms_info_block">
+
+                <div class="page_content">
+
+                    <header class="page_header page_header_2">
+                        <div class="col-xs-12 logo_block" ng-if="!storyCtrl.isMobile && page.activeQuestionIndex == undefined">
+                            <a href="#" class="logo" style="margin-left:auto;margin-right:auto;float:none">
+                                <img src="assets/img/logo.svg" alt="Logo Image">
+                            </a>
+                        </div>
+                        <div class="col-xs-12 logo_block" ng-if="!storyCtrl.isMobile && page.activeQuestionIndex != undefined">
+                            <div style="margin-left:auto;margin-right:auto;float:none;margin-top:-15px">
+                                <h1 style="margin: auto;min-width: 300px;display: inline-block;background: #A5C72E;color: white !important;padding-left:24px;padding-right:24px;padding-top:12px;padding-bottom:12px;font-size: 18px;border-radius:0px 0px 25px 25px">{{page.title}}</h1>
+                            </div>
+                        </div>
+                    </header>
+
+                    <section class="page_center member_story_content" ng-if="!storyCtrl.isMobile">
+                        <div ng-if="page.activeQuestionIndex == undefined ">
+                            <h1 class="color_brand">{{page.title}}</h1>
+                            <blockquote>
+                                <p ng-if="page.activeQuestionIndex == undefined ">{{page.subTitle}}</p>
+                                <p ng-if="page.activeQuestionIndex != undefined ">{{current_index = page.activeQuestionIndex + 1}}) {{page.questions[page.activeQuestionIndex].question}}</p>
+                            </blockquote>
+                            <div ng-if="page.questions.length == 0" class="member_story_detail splitParagraph">
+                                <p class="msd_desc">{{page.description}}</p>
+                            </div>
+                            <div ng-if="page.questions.length > 0" class="member_story_detail" ng-class="page.questions[page.activeQuestionIndex].image ? '' : 'splitParagraph'">
+                                <p class="msd_img" ng-if="page.questions[page.activeQuestionIndex].image">
+                                    <img ng-src="{{  page.questions[page.activeQuestionIndex].image }}" set-image>
+                                </p>
+                                <p class="msd_desc" ng-bind-html="page.questions[page.activeQuestionIndex].answer | unsafeHtml"></p>
+                            </div>
+                        </div>
+
+                        <div ng-if="page.activeQuestionIndex != undefined ">
+
+                            <div style="height:80px;width:80px;background-color:#A5C72E;float:left;margin-right:10px">
+                                <h1 style="color:white;text-align: center;
+vertical-align: middle;line-height:80px">Q{{current_index = page.activeQuestionIndex + 1}}</h1>
+                            </div>
+
+                            <div style="height: 80px;">
+                                <p ng-if="page.activeQuestionIndex != undefined " class="ng-binding ng-scope" style="color: #A5C72E;height: 80px;display: table-cell;vertical-align: middle;font-weight:bold;max-width: 500px;">{{page.questions[page.activeQuestionIndex].question}}</p>
+                            </div>
+
+                            <div ng-if="page.questions.length == 0" class="member_story_detail splitParagraph" style="float: left;margin-top: 15px;">
+                                <p class="msd_desc">{{page.description}}</p>
+                            </div>
+                            <div ng-if="page.questions.length > 0" class="member_story_detail" ng-class="page.questions[page.activeQuestionIndex].image ? '' : 'splitParagraph'"
+                                style="float: left;margin-top: 15px;">
+                                <p class="msd_img" ng-if="page.questions[page.activeQuestionIndex].image">
+                                    <img ng-src="{{  page.questions[page.activeQuestionIndex].image }}" set-image>
+                                </p>
+                                <p class="msd_desc" ng-bind-html="page.questions[page.activeQuestionIndex].answer | unsafeHtml"></p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="page_center member_story_content" ng-if="storyCtrl.isMobile" ng-class="page.questions.length == 0 ? 'no-question' : '' ">
+                        <h1 class="color_brand">{{page.title}}</h1>
+                        <blockquote>
+                            <p ng-if="page.activeQuestionIndex == undefined ">{{page.subTitle}}</p>
+                            <p ng-if="page.activeQuestionIndex != undefined">{{page.questions[page.activeQuestionIndex].question}}</p>
+                        </blockquote>
+                        <div ng-if="page.questions.length == 0" class="member_story_detail" ng-scrollbars story-answer-height="">
+                            <p class="msd_desc">{{page.description}}</p>
+                        </div>
+                        <div ng-if="page.questions.length > 0" ng-scrollbars class="member_story_detail" story-answer-height="{{page.activeQuestionIndex}}">
+                            <p class="msd_img" ng-if="page.questions[page.activeQuestionIndex].image"><img ng-src="{{  page.questions[page.activeQuestionIndex].image }}" set-image update-scrollbar></p>
+                            <p class="msd_desc" ng-bind-html="page.questions[page.activeQuestionIndex].answer | unsafeHtml"></p>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+            <div class="que_navigation">
+                <ul>
+                    <li ng-repeat="question in page.questions" ng-class="page.activeQuestionIndex == $index ? 'active' : ''"><a ng-click="page.activeQuestionIndex = $index" id="question_{{storyCtrl.storyDetail.no}}_{{$index}}">Q{{$index +1}}</a></li>
+                </ul>
+            </div>
+
+
+
+            <div ng-if="page.activeQuestionIndex != undefined ">
+                <a ng-if="$root.hasPagination && $root.nestedSwipe" 
+                 ng-class="{disabled: $root.hideDownArrow}" ng-disabled="$root.hideDownArrow"
+                    ng-click="$root.nextColumn()" role="button" aria-pressed="false" class="main-arrow down disabled" href="javascript:void(0);"
+                    style="cursor: pointer;bottom: 20px;height: 40px;left: 50%;margin-left: -30px;position: absolute;width: 40px;z-index:999999">
+                    <img src="assets/img/down-arrow.png" />
+                </a>
+            </div>
+
+            <div ng-if="page.activeQuestionIndex == undefined ">
+                <a ng-if="$root.hasPagination && $root.nestedSwipe"  ng-class="{disabled: $root.hideDownArrow}" ng-disabled="$root.hideDownArrow"
+                    ng-click="$root.nextColumn()" role="button" aria-pressed="false" class="main-arrow down active"
+                    href="javascript:void(0);" style="cursor: pointer;bottom: 20px;height: 40px;left: 50%;margin-left: -30px;position: absolute;width: 40px;z-index:999999">
+                    <img src="assets/img/down-arrow.png" />
+                </a>
+            </div>
+
+            <div ng-if="page.activeQuestionIndex != undefined ">
+            <a ng-if="!storyCtrl.isMobile" id="next_{{storyCtrl.storyDetail.no}}" ng-class="{'disabled': $root.isLastSlide}" ng-disabled="$root.isLastSlide" class="main-arrow right active"
+                style="cursor: pointer;height: 22px;margin-top: -20px;position: absolute;right: 30px;top: 95%;width: 130px;z-index:999999;"
+                ng-click="$root.removeReverse(); $root.pageNext();" href="javascript:void(0);">
+                <img src="assets/img/next-story.png" />
+            </a>
+            </div>
+
+            <div ng-if="page.activeQuestionIndex == undefined">
+            <a ng-if="!storyCtrl.isMobile" ng-class="{'disabled': $root.isLastSlide}" ng-disabled="$root.isLastSlide" class="main-arrow right active"
+                style="cursor: pointer;height: 22px;margin-top: -20px;position: absolute;right: 30px;top: 95%;width: 130px;z-index:999999;"
+                ng-click="$root.removeReverse(); $root.pageNext();" href="javascript:void(0);">
+                <img src="assets/img/next-story.png" />
+            </a>
+            </div>
+
+            <a ng-if="!storyCtrl.isMobile" class="main-arrow left active" style="cursor: pointer;height: 22px;margin-top: -20px;position: absolute;left: 30px;top: 95%;width: 162px;z-index:999999;"
+                ng-click="$root.addReverse(); $root.pagePrev();" href="javascript:void(0);">
+                <img src="assets/img/previous-story.png" />
+            </a>
+
+            <a ng-if="!storyCtrl.isMobile" ng-click="$root.removeReverse(); $root.slideTo(2)" role="button" class="active" aria-pressed="false" href="javascript:void(0);"
+                style="cursor: pointer;width: 40px;position: absolute;left: 50px;top: 50px;z-index:999999">
+                <img src="assets/img/home-button-green.png"  />
+            </a>
+
+            <a ng-if="$root.hasPagination && $root.nestedSwipe" ng-class="{disabled: $root.hideUpArrow}" ng-disabled="$root.hideUpArrow"
+                ng-click="$root.prevColumn()" role="button" aria-pressed="false" class="main-arrow up active" href="javascript:void(0);"
+                style="cursor: pointer;bottom: 20px;height: 40px;left: 51%;margin-left: 0px;position: absolute;width: 40px;z-index:999999">
+                <img src="assets/img/down-arrow.png" style="transform: rotate(180deg);" />
+            </a>
+        </ks-swiper-slide>
+    </ks-swiper-container>
+</div>

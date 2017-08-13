@@ -1,0 +1,16 @@
+<article id="{{storyItemCtrl.storyModel.slug}}">
+    <a  ng-click="storyItemCtrl.loadStory(storyItemCtrl.storyModel.slug)">
+        <div class="story_list_desc">
+            <figure><img ng-src="{{storyItemCtrl.storyModel.bgImage}}" alt="Story"></figure>
+            <div class="story_list_desc_inr">
+                <h2>{{storyItemCtrl.storyModel.name}}</h2>
+                <p>{{ storyItemCtrl.storyModel.publisher.uniqueSellingPoint}}</p>
+            </div>
+        </div>
+        <div class="story_list_member">
+            <h3>
+                <div class="story_img"><img ng-src="{{storyItemCtrl.storyModel.publisher.profilePic}}" alt="story member"></div><span><strong>{{storyItemCtrl.storyModel.publisher.name}}</strong> {{storyItemCtrl.storyModel.publisher.designation}}</span></h3>
+            <span class="videoIcn"><i class="icon-video"></i></span>
+        </div>
+    </a>
+</article>

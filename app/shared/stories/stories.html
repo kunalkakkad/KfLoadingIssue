@@ -1,0 +1,61 @@
+<div class="page_background page_background_2" style="background-image: url('assets/img/green-grad-bg.jpg')"></div>
+<div class="layout layout_2 clearFix">
+    <div class="page_content">
+        <header class="page_header"></header>
+        <section class="page_center page_center_1">
+            <h1 class="page_title"><i class="icon-hill-flag"></i> <strong>{{ 'Common.Success_Delivering_Title' | translate }} </strong><span>{{ 'Common.Success_Delivering_SubTitle' | translate }}</span></h1>
+            <div
+                class="stories_filter_block row">
+                <div class="col-xs-12 stories_filter stories_search_filter"><input type="text" class="stories_input_filter" ng-model="storiesCtrl.search" ng-keyup="storiesCtrl.searchVal();"
+                        translate-attr="{ placeholder: 'Stories.Search_Placeholder' }"> <button type="submit" class="btn pull-right"
+                        ng-click="storiesCtrl.searchVal();"><i class="icon-search"></i></button></div>
+                <div class="col-xs-12 stories_filter stories_sort">
+                    <div class="stories_founds pull-left">
+                        <p><strong>{{ 'Stories.Story_count' | translate :{ value: storiesCtrl.storyCount } }}</strong></p>
+                    </div>
+                    <div class="sorting_filter pull-left"><strong>{{'Stories.Sort_by' | translate}}:</strong>
+                        <ul>
+                            <li><label>{{'Stories.Founder_Name' | translate}}: </label> <button type="button" ng-click="storiesCtrl.filterByFounderName();">{{'Stories.A_Z' | translate}}</button></li>
+                            <li
+                                class="hidden-xs hidden-sm"><label>{{'Stories.Company_Name' | translate}}: </label> <button type="button" ng-click="storiesCtrl.filterByCompanyName();">{{'Stories.A_Z' | translate}}</button></li>
+                                <li
+                                    class="hidden-xs hidden-sm emirate_name"><label>{{'Stories.Emirate' | translate }}: </label>
+                                    <div class="dropdown" uib-dropdown><button class="" type="button" uib-dropdown-toggle><span data-bind="label">{{ storiesCtrl.location.value }}</span> <span class="caret"></span></button>
+                                        <ul
+                                            class="dropdown-menu" uib-dropdown-menu>
+                                            <li ng-repeat="location in storiesCtrl.locations"><a ng-click="storiesCtrl.selectLocation(location)">{{ location.value }}</a></li>
+                        </ul>
+                        </div>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="show_all_stories pull-left hidden-xs hidden-sm"><button ng-click="storiesCtrl.clearFilters();">{{ 'Stories.Show_All_Stories' | translate}}</button></div>
+                </div>
+    </div>
+    <div class="stories_list">
+        <ks-swiper-container ng-if="!storiesCtrl.isMobile" swiper="storiesCtrl.swiper" on-ready="storiesCtrl.onReadySwiper(swiper)" pagination-is-active="true"
+            direction="horizontal" pagination-clickable="true" space-between="10" override-parameters="{hashnav:true,observer:true,keyboardControl:true,mousewheelControl:true,slidesPerView:3,nested:true,hashnavWatchState:true,freeMode:true,speed:1000}"
+            ng-show="storiesCtrl.storyCount > 0">
+            <ks-swiper-slide class="swiper-slide" ng-repeat="story in storiesCtrl.stories | orderBy : storiesCtrl.order" ng-hide="story.hideStory">
+                <story-item item="story" ng-init="storiesCtrl.addStoriesRoute(story.storyId)"></story-item>
+            </ks-swiper-slide>
+        </ks-swiper-container>
+        <ks-swiper-container ng-if="storiesCtrl.isMobile" swiper="storiesCtrl.swiper" on-ready="storiesCtrl.onReadySwiper(swiper)" pagination-is-active="false"
+            direction="horizontal" space-between="10" override-parameters="{hashnav:true,observer:true,keyboardControl:true,mousewheelControl:true,slidesPerView:3,nested:true,hashnavWatchState:true,freeMode:true,speed:1000}"
+            ng-show="storiesCtrl.storyCount > 0">
+            <ks-swiper-slide class="swiper-slide" ng-repeat="story in storiesCtrl.stories | orderBy : storiesCtrl.order" ng-hide="story.hideStory">
+                <story-item item="story" ng-init="storiesCtrl.addStoriesRoute(story.storyId)"></story-item>
+            </ks-swiper-slide>
+        </ks-swiper-container>
+        <article ng-if="storiesCtrl.storyCount == 0" class="no_data_found">
+            <p class="no-data">{{ 'Common.No_Record' | translate }}</p>
+        </article>
+    </div>
+    </section>
+</div> <a ng-if="!storiesCtrl.isMobile" class="main-arrow right active right-arrow-child" style="cursor: pointer;height: 40px;margin-top: -20px;position: absolute;right: 20px;top: 60%;width: 40px;z-index:999999"
+    ng-click="storiesCtrl.pageNext();" href="javascript:void(0);">
+                <img src="assets/img/down-arrow.png" id="hint3" style="transform: rotate(270deg);" />
+            </a> <a ng-if="!storiesCtrl.isMobile" class="main-arrow left active left-arrow-child" style="cursor: pointer;height: 40px;margin-top: -20px;position: absolute;left: 20px;top: 60%;width: 40px;z-index:999999;display:none"
+    ng-click="storiesCtrl.pagePrev();" href="javascript:void(0);">
+                <img src="assets/img/down-arrow.png" style="transform: rotate(90deg);" />
+            </a></div>

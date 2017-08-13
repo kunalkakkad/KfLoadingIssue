@@ -1379,7 +1379,7 @@ angular
                     if (selectedLanguage == 'en') {
                         url = "/" + url;
                     }
-                    url = url.replace('/angularv3', '');
+                    url = url.replace('/KfLoadingIssue', '');
                     $location.url(url);
 
                 }

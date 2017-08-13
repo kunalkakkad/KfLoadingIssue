@@ -2136,6 +2136,11 @@ angular
 	           //         },timeoutval);
             //	}
             //}) 
+            while (vm.swiper.imagesLoaded) {
+                $rootScope.showSpinner = false;
+                $rootScope.progressbar.complete();
+            }
+            
         }
 
         function getSwiperData(index) {

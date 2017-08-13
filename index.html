@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+
+<head>
+  <title ng-bind="ngMeta.title"></title>
+ 
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{$root.title}}" />
+  <meta property="og:text" content="{{$root.title}}" />
+  <meta property="og:description" content="{{$root.description}}" />
+  <meta property="og:image" content="{{$root.media}}" />
+  <meta property="og:image:secure_url" content="{{$root.media}}" />
+  <meta property="og:image:type" content="image/jpg" />
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <base href="/angularv3/" />
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="assets/css/lib.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+    <!-- <link href="bower_components/enjoyhint/enjoyhint.css" rel="stylesheet">  --> 
+  <style>
+  /* Styling for the ngProgress itself */
+  #ngProgress {
+    margin: 0;
+    padding: 0;
+    z-index: 99998;
+    background-color: green;
+    color: green;
+    box-shadow: 0 0 10px 0; /* Inherits the font color */
+    height: 2px;
+    opacity: 0;
+
+    /* Add CSS3 styles for transition smoothing */
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
+/* Styling for the ngProgress-container */
+  #ngProgress-container {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+  }
+
+  .member_story_detail {
+  	text-align:left !important;
+  }
+
+  @media screen and (max-height:650px){
+    main.container{
+      height:calc(100vh - 94px) !important;
+      margin-top:44px!important;
+    }
+  }
+
+  @media screen and (min-height:650px){
+    body {
+        zoom: 0.85; /* Other non-webkit browsers */
+        zoom: 85%; /* Webkit browsers */
+     }
+     main.container{
+     	-moz-transform: scale(0.85);
+        margin-top:84px !important;
+        height:700px !important;
+     }
+  }
+    .enjoyhint_close_btn {
+      display:none !important;
+    }
+
+    #header .list-contents {
+      width: 40px;
+    }
+
+    #header .list-contents i:hover {
+      color: #ccc;
+    }
+
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+      background-image: url("http://kf.cpibusiness.net/angularv3/assets/img/down-arrow.png");
+      right: 20px;
+    }
+
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+      background-image: url("http://kf.cpibusiness.net/angularv3/assets/img/up-arrow.png");
+      left: 20px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-size: 55px 55px;
+    }
+
+    .swiper-container-vertical .swiper-button-next,
+    .swiper-container-vertical .swiper-button-prev {
+      transform: rotate(0deg) !important;
+    }
+
+    .swiper-container-horizontal .swiper-button-next,
+    .swiper-container-horizontal .swiper-button-prev {
+      transform: rotate(270deg);
+    }
+
+    .down-arrow {
+      -moz-animation: bounce 2s infinite;
+      -webkit-animation: bounce 2s infinite;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .right-arrow-child {
+      -moz-animation: moveright 2s infinite;
+      -webkit-animation: moveright 2s infinite;
+      animation: moveright 2s infinite;
+    }
+
+    .left-arrow-child {
+      -moz-animation: moveleft 2s infinite;
+      -webkit-animation: moveleft 2s infinite;
+      animation: moveleft 2s infinite;
+    }
+
+    @keyframes moveright {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateX(0);
+      }
+      40% {
+        transform: translateX(20px);
+      }
+      60% {
+        transform: translateX(10px);
+      }
+    }
+
+    @keyframes moveleft {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateX(0);
+      }
+      40% {
+        transform: translateX(-20px);
+      }
+      60% {
+        transform: translateX(-10px);
+      }
+    }
+ 
+  </style>
+
+</head>
+
+<body ng-class="{'rtl':$root.currentLanguage == 'ar'}" device-detector ng-cloak>  
+  
+  <div class="loader-container" style="display:block;"><div class="abs_center"><h1 class="text-uppercase">Khalifa Fund</h1><div class="loading"><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div><div class="loading-bar"></div></div > </div> </div>
+
+  <div class="offline-ui" ng-class="{'offline-ui-up offline-ui-up-5s':$root.isOnline,'offline-ui-down':!$root.isOnline,'offline-ui-connecting offline-ui-waiting':$root.isRetry}"
+    ng-if="$root.connectionStatus !== '' ">
+    <div class="offline-ui-content">
+      {{$root.connectionStatus}}
+    </div>
+  </div>
+  <div id="header" class="nav-bar" role="banner" ng-cloak>
+    <a role="button" aria-pressed="false" class="btn_header first back" ng-click="$root.addReverse(); $root.slideTo(0);"><i class="icon-header-back"></i></a>
+    <h1 class="issue" ng-if="!$root.isMobile"><a ui-sref="index" ng-click="$root.addReverse(); $root.slideTo(0);">Khalifa Fund For Enterprise Development</a></h1>
+
+         <!-- this is navigation area -->
+    <a role="button" aria-pressed="false" class="btn_header list-contents" ng-click="$root.showNavBar = !$root.showNavBar;$root.showShareBar = false;"><i class="icon-header-menu"></i></a>
+
+    <a role="button" aria-pressed="false" class="btn_header list-contents" socialshare socialshare-provider="twitter" socialshare-url="{{$root.shareUrl}}"
+      socialshare-hashtags="{{$root.hashTags}}" href="javascript:void(0);" role="button" target="_blank"><i class="icon-twitter-logo"></i></a>
+
+    <a role="button" aria-pressed="false" class="btn_header list-contents" socialshare socialshare-provider="facebook" socialshare-title="{{$root.title}}"
+      socialshare-text="{{$root.text}}" socialshare-description="{{$root.description}}" socialshare-media="{{$root.media}}"
+      socialshare-url="{{$root.shareUrl}}" socialshare-hashtags="{{$root.hashTags}}" href="javascript:void(0);" role="button"><i class="icon-facebook-logo"></i></a>
+
+    <a role="button" aria-pressed="false" class="btn_header list-contents" socialshare socialshare-provider="google" socialshare-url="{{$root.shareUrl}}"
+      href="javascript:void(0);" role="button"><i class="icon-google-plus-logo"></i></a>
+
+    <a role="button" aria-pressed="false" class="btn_header list-contents" socialshare socialshare-provider="linkedin" socialshare-url="{{$root.shareUrl}}"
+      socialshare-text="{{$root.text}}" socialshare-description="{{$root.description}}" href="javascript:void(0);" role="button"><i class="icon-linkedin-logo"></i></a>
+
+    <!--         <a role="button" aria-pressed="false" class="btn_header share" ng-click="$root.showShareBar = !$root.showShareBar;$root.showNavBar = false;"><i class="icon-header-share"></i></a>
+ -->
+  </div>
+  <main class="container vertical-align" ng-class="$root.isHome ? 'homescr' : ''" vertical-align="768">
+    <div ng-view ng-class="[effect]" class="clearfix" ui-view></div>
+  </main>
+
+  <div id="footer" role="" ng-hide="$root.isHome" ng-cloak>
+    <div id="footer-navigation">
+    <a ng-if="$root.hasMemberHome" 
+         ng-click="$root.removeReverse(); $root.slideTo(62)" role="button" aria-pressed="false" class="navigation-btn down active"
+        href="javascript:void(0);">
+                <i><img src='http://kf.cpibusiness.net/angularv3/assets/img/home-button-m.png'></i>
+            </a>
+      <a ng-if="$root.hasPagination && $root.nestedSwipe" 
+         ng-click="$root.removeReverse(); $root.slideTo(2)" role="button" aria-pressed="false" class="navigation-btn down active"
+        href="javascript:void(0);">
+                <i><img src='http://kf.cpibusiness.net/angularv3/assets/img/home-button.png'></i>
+            </a>
+      <a id="page-previous" ng-if="$root.hasPagination" class="navigation-btn left active" style="cursor: pointer;" ng-click="$root.addReverse(); $root.pagePrev();"
+        href="javascript:void(0);">
+                <i class="icon-footer-arrow"></i>
+            </a>
+      <a id="page-next" ng-if="$root.hasPagination" ng-class="{'disabled': $root.isLastSlide}" ng-disabled="$root.isLastSlide" class="navigation-btn right active"
+        style="cursor: pointer;" ng-click="$root.removeReverse(); $root.pageNext();" href="javascript:void(0);">
+                <i class="icon-footer-arrow"></i>
+            </a>
+      <div ng-if="$root.hasPagination && $root.nestedSwipe && !$root.isMobile" class="current-location" style="direction: ltr;">
+        <span>{{$root.pageIndex.row}} - {{$root.pageIndex.column}}</span>
+      </div>
+      <a ng-if="$root.hasPagination && $root.nestedSwipe" ng-class="{disabled: $root.hideUpArrow}" ng-disabled="$root.hideUpArrow"
+        id="column-previous" ng-click="$root.prevColumn()" role="button" aria-pressed="false" class="navigation-btn up active"
+        href="javascript:void(0);">
+                <i class="icon-footer-arrow"></i>
+            </a>
+      <a ng-if="$root.hasPagination && $root.nestedSwipe" ng-class="{disabled: $root.hideDownArrow}" ng-disabled="$root.hideDownArrow"
+        id="column-next" ng-click="$root.nextColumn()" role="button" aria-pressed="false" class="navigation-btn down active"
+        href="javascript:void(0);">
+                <i class="icon-footer-arrow"></i>
+            </a>
+    </div>
+  </div>
+  <item-nav-bar ng-show="$root.showNavBar"></item-nav-bar>
+  <share-nav-bar ng-show="$root.showShareBar"></share-nav-bar>
+   <script src="assets/js/lib.js"></script>
+  <script src="assets/js/app.js"></script>
+   <!-- <script src="bower_components/enjoyhint/enjoyhint.min.js"></script>   -->
+  <script src="bower_components/ngProgress/ngProgress.min.js"></script>
+</body>
+
+</html>

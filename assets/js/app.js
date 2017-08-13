@@ -30,7 +30,7 @@ app.controller('myController', function($scope){
             baseTemplateUrl: "app/views/",
             sharedTemplateUrl: "app/shared/",
             //apiUrl: "http://192.168.1.113/kf.cpibusiness-admin/frontend/web/",
-            apiUrl: "http://stagebuilder.cpibusiness.net/frontend/web/",
+            apiUrl: "https://stagebuilder.cpibusiness.net/frontend/web/",
             videoPlayerTheme: 'assets/css/videogular.min.css',
             facebookApplicationId: '438338053199445'
         });

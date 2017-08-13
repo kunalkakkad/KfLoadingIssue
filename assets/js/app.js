@@ -2151,12 +2151,18 @@ angular
         function getSwiperData(index) {
             var currentSlide = dataService.swiperData[index];
             angular.copy(currentSlide, $scope.currentSlide);
-            angular.copy(currentSlide.isHome, $rootScope.isHome);
-            angular.copy(currentSlide.hasPagination, $rootScope.hasPagination);
-            angular.copy(currentSlide.hasMemberHome, $rootScope.hasMemberHome);
-            angular.copy(currentSlide.nestedSwipe, $rootScope.nestedSwipe);
-            angular.copy(currentSlide.index, $rootScope.pageIndex.row);
-            angular.copy(1, $rootScope.pageIndex.column );
+            //angular.copy(currentSlide.isHome, $rootScope.isHome);
+            //angular.copy(currentSlide.hasPagination, $rootScope.hasPagination);
+            //angular.copy(currentSlide.hasMemberHome, $rootScope.hasMemberHome);
+            //angular.copy(currentSlide.nestedSwipe, $rootScope.nestedSwipe);
+            //angular.copy(currentSlide.index, $rootScope.pageIndex.row);
+            //angular.copy(1, $rootScope.pageIndex.column );
+            $rootScope.isHome = currentSlide.isHome;
+            $rootScope.hasPagination = currentSlide.hasPagination;
+            $rootScope.hasMemberHome = currentSlide.hasMemberHome;
+            $rootScope.nestedSwipe = currentSlide.nestedSwipe;
+            $rootScope.pageIndex.row = currentSlide.index;
+            $rootScope.pageIndex.column = 1;
 
             //$scope.currentSlide = currentSlide;
             //$rootScope.isHome = currentSlide.isHome;
